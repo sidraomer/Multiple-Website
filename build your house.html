@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your House</title>
+    <style>
+        .navbar {
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: #3498db;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+    }
+}
+        .hero{
+            width: 1255px;
+        }
+
+
+        .card-container {
+  display: flex;
+  justify-content: space-between; /* Space between cards */
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Wrap cards if the screen is too small */
+  margin-top: 100px;
+}
+
+.premium-card {
+  background-color: white;
+  color: red;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  max-width: 23%;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden; 
+  box-shadow: 0px 0px 5px 10px black;
+
+}
+
+.premium-card img {
+  width: 100%; /* Make the image span the full width of the card */
+  height: auto; /* Maintain the image's aspect ratio */
+  border-radius: 10px 10px 0 0; /* Rounded corners for the top of the image */
+  margin-bottom: 10px; /* Space between the image and the text */
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.reviews-section {
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.review {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid gold;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.customer-name {
+    font-size: 1rem;
+    font-style: italic;
+    color: #777;
+}
+
+.review:last-child {
+    margin-bottom: 0;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #00aaff;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#scrollTop {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#scrollTop:hover {
+    background-color: #00aaff;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Build Your House</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#get-started">Get Started</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <img src="house.jpg" alt="" class="hero">
+    </div>
+    <h1 style="text-align: center; color: brown; margin-top: 100px;">Houses</h1>
+    <div class="card-container">
+        <div class="premium-card">
+          <img src="h.webp" alt="Premium 1">
+          <h2>This Is House#1</h2>
+          <p>This is some premium content.</p>
+        </div>
+        <div class="premium-card">
+          <img src="o.jpeg" alt="Premium 2">
+          <h2>This Is House#2</h2>
+          <p>This is some premium content.</p>
+        </div>
+        <div class="premium-card">
+          <img src="u.jpeg" alt="Premium 3">
+          <h2>This Is House#3</h2>
+          <p>This is some premium content.</p>
+        </div>
+        <div class="premium-card">
+          <img src="s.jpeg" alt="Premium 4">
+          <h2>This Is House#4</h2>
+          <p>This is some premium content.</p>
+        </div>
+      </div>
+      <h1 style="text-align: center; color: brown; margin-top: 100px;">Kithen Acsessories</h1>
+      <div class="card-container">
+        <div class="premium-card">
+          <img src="h.webp" alt="Premium 1">
+          <h2>Sink</h2>
+          <p>Best Sink I have Ever Had</p>
+        </div>
+        <div class="premium-card">
+          <img src="o.jpeg" alt="Premium 2">
+          <h2>CupBoards</h2>
+          <p>5 Year Gurentee</p>
+        </div>
+        <div class="premium-card">
+          <img src="u.jpeg" alt="Premium 3">
+          <h2>Shelfs</h2>
+          <p>Best Shelfs ever</p>
+        </div>
+        <div class="premium-card">
+          <img src="s.jpeg" alt="Premium 4">
+          <h2>Utensils</h2>
+          <p>Plates,glasess etc</p>
+        </div>
+      </div>
+      <div class="reviews-section">
+        <h2>Customer Reviews</h2>
+
+        <div class="review">
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I am absolutely thrilled with my gold-plated item! The shine and finish are flawless, and it looks far more expensive than I expected. It adds a touch of elegance to my collection, and I've already received many compliments on it. Truly a great investment!"</p>
+            <p class="customer-name">— Sophia M., New York</p>
+        </div>
+
+        <div class="review">
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"The attention to detail in this gold plating is unmatched. The smooth, shiny surface gives it a luxurious feel, and it’s clear that the craftsmanship is top-notch. I couldn't be happier with my purchase!"</p>
+            <p class="customer-name">— Lucas T., London</p>
+        </div>
+
+        <div class="review">
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I was hesitant at first due to the price, but after receiving my gold-plated item, I can confidently say it was worth every penny. It feels sturdy and the gold finish has a rich, vibrant color. Highly recommend!"</p>
+            <p class="customer-name">— Jessica W., Los Angeles</p>
+        </div>
+
+        <div class="review">
+            <div class="rating">⭐⭐⭐⭐☆</div>
+            <p class="review-text">"The design is beautiful, and the gold plating shines brilliantly, but I had to be careful with handling it at first. The plating is delicate, so I suggest keeping it stored safely when not in use. Still, a gorgeous piece overall!"</p>
+            <p class="customer-name">— Michael R., Toronto</p>
+        </div>
+
+        <div class="review">
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I bought this as a gift for my partner, and they were absolutely thrilled! The gold-plated item looks timeless, with a sophisticated gleam that makes it look very high-end. It has become one of their favorite possessions!"</p>
+            <p class="customer-name">— Emily D., Sydney</p>
+        </div>
+
+        <div class="review">
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I use this gold-plated product every day, and it still looks as shiny and beautiful as the day I bought it. It’s durable, high-quality, and definitely makes a statement. I’ll be back for more products in the future!"</p>
+            <p class="customer-name">— Daniel P., Miami</p>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Help & Support</a></li>
+                    <li><a href="#">Advertise On Zameen</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Expo</a></li>
+                    <li><a href="#">Real Estate Agents</a></li>
+                    <li><a href="#">Add Property</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Head Office</h4>
+                <p>📍 Pearl One, 94-B/I, MM Alam Road,<br> Gulberg III, Lahore, Pakistan</p>
+                <p>📞 0800-ZAMEEN (92633)<br>Monday To Sunday 9AM To 6PM</p>
+                <p>✉️ <a href="mailto:email@zameen.com">Email Us</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Roshan Digital Account</h4>
+                <p>ROSHAN<br>DIGITAL ACCOUNT</p>
+                <h4>Get Connected</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright 2007 - 2024 Zameen.com. All Rights Reserved</p>
+            <button id="scrollTop">TOP</button>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('.navbar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            menuToggle.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

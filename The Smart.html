@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart School</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            position: fixed;
+            width: 1255px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #EFF3EA;
+            color: black;
+        }
+
+        .navbar img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: orange;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                background-color: #444;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 200px;
+                display: none;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .toggle-menu {
+                cursor: pointer;
+                display: block;
+            }
+        }
+
+        .toggle-menu {
+            display: none;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .hero{
+            width: 1255px;
+        }
+
+        .image{
+            width: 500px;
+            height: auto;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        .group-profile {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  height: auto;
+}
+
+.image-container img {
+  width: 500px;
+  max-width: 500px;
+  border-radius: 8px;
+  height: auto;
+}
+
+.text-container {
+  margin-left: 20px;
+}
+
+.text-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.text-container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #f04e30;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.text-container button:hover {
+  background-color: #d04328;
+} 
+
+.container {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .option {
+      display: inline-block;
+      width: 200px;
+      margin: 0 20px;
+      text-align: center;
+      transition: color 0.3s ease; /* Smooth transition */
+    }
+
+    .option img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+    }
+
+    .option:hover {
+      color: yellow; /* Text color changes to yellow on hover */
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="the-smart-school.png" alt="Smart School Logo">
+        <span class="toggle-menu" onclick="toggleMenu()">☰</span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <img src="smart hero.jpg" alt="" class="hero">
+    </div>
+    <div class="group-profile">
+        <div class="image-container">
+          <img src="city school.jpg" alt="School Building">
+        </div>
+        <div class="text-container">
+          <h2>GROUP PROFILE</h2>
+          <p>
+            Established in Karachi in 1978, <i>The City School</i> is today one of the largest private school networks across the globe. 
+            Having more than 500 schools with over 150,000 students, we continue to expand our reach in other countries including 
+            United Arab Emirates, Malaysia, Philippines, Oman, and Saudi Arabia, to meet the demands for quality education as well 
+            as to ensure a strong global presence.
+          </p>
+          <button>Read more</button>
+        </div>
+      </div>
+     <div class="world-wide">
+        <img src="web-banner-map-tss-01-1024x297.png" alt="" class="hero">
+     </div>
+     <footer style="background: lightslategrey; height: 20px;">
+        <p style="color: #333; text-align: center;">&copy; The Smart School. All Rights Reserved.</p>
+     </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar ul');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

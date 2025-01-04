@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spider-Man Web Effect</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #111;
+      display: flexbox;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="webCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('webCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const mouse = {
+      x: null,
+      y: null,
+    };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    });
+
+    class WebDot {
+      constructor(x, y, radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.originalRadius = radius;
+        this.color = '#ff4141';
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      update() {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 100) {
+          this.radius = this.originalRadius + 3;
+          this.x += dx * 0.05;
+          this.y += dy * 0.05;
+        } else {
+          this.radius = this.originalRadius;
+        }
+
+        this.draw();
+      }
+    }
+
+    const webDots = [];
+    for (let i = 0; i < 150; i++) {
+      const radius = Math.random() * 2 + 2;
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      webDots.push(new WebDot(x, y, radius));
+    }
+
+    function connectDots() {
+      for (let i = 0; i < webDots.length; i++) {
+        for (let j = i; j < webDots.length; j++) {
+          const dx = webDots[i].x - webDots[j].x;
+          const dy = webDots[i].y - webDots[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 120) {
+            ctx.beginPath();
+            ctx.moveTo(webDots[i].x, webDots[i].y);
+            ctx.lineTo(webDots[j].x, webDots[j].y);
+            ctx.strokeStyle = 'rgba(255, 65, 65, 0.2)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            ctx.closePath();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      webDots.forEach((dot) => dot.update());
+      connectDots();
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

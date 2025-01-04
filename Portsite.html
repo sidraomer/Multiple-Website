@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portsite</title>
+    <style>
+        body{
+            background-color: black;
+        }
+
+
+        .navbar{
+            background-color: rgb(255, 0, 0);
+           color: black;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+
+        .navbar li{
+            list-style: none;
+        }
+
+        .navbar a{
+            color: black;
+            float: left;
+            padding: 20px 30px 20px 30px;
+            margin-left: 90px;
+            text-decoration: none;
+        }
+
+        .hero{
+            width: 1255px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 20px;
+            height: 400px;
+
+            text-align: center;
+        }
+        .card h3 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .card p {
+            margin: 0;
+            color: #555;
+        }
+
+        .plan {
+      border: 1px solid red;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .plan h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .plan .price {
+      font-size: 2rem;
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .plan ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .plan button {
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .plan button:hover {
+      background: darkred;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Me</a></li>
+        </ul>
+    </nav>
+   
+    <div class="hero">
+        <img src="anime.webp" alt="" class="hero">
+    </div>
+    <h1 style="color: #555;text-align: center;">Make These Things</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="web design.avif" alt="" style="width: 200px;">
+
+            <h3>Web Designing</h3>
+            <p>I Will Design Your Website.</p>
+        </div>
+        <div class="card">
+            <img src="web development.jpeg" alt="" style="width: 200px;">
+            <h3>Web Development</h3>
+            <p>And Also I Will Make Your Website.</p>
+        </div>
+        <div class="card">
+            <img src="editing.webp" alt="" style="width: 200px;">
+            <h3>Video Editing</h3>
+            <p>I Will Also Edit Your Videos.</p>
+        </div>
+        <div class="card">
+            <img src="painting11.jpeg" alt="" style="width: 200px;">
+            <h3>Art</h3>
+            <p>And Make Paintings.</p>
+        </div>
+       
+    </div>
+    <section id="plans" class="plans">
+        <h2>Our Plans</h2>
+        <div class="card-container">
+          <div class="plan">
+            <h3>Basic Plan</h3>
+            <div class="price">$10</div>
+            <ul>
+              <li>Smart coding plan</li>
+              <li>At home workouts</li>
+            </ul>
+            <button>Join Now</button>
+          </div>
+          <div class="plan">
+            <h3>Gold Plan</h3>
+            <div class="price">$50</div>
+            <ul>
+              <li>Pro codes</li>
+              <li>Smart coding plan</li>
+              <li>At home workouts</li>
+            </ul>
+            <button>Join Now</button>
+          </div>
+          <div class="plan">
+            <h3>Diamond Plan</h3>
+            <div class="price">$100</div>
+            <ul>
+              <li>Elite classes & courses</li>
+              <li>Pro codes</li>
+              <li>Personal coaching</li>
+              <li>Smart coding plan</li>
+              <li>At home workouts</li>
+            </ul>
+            <button>Join Now</button>
+          </div>
+        </div>
+      </section>
+      <footer >
+        <p style="text-align: center;color: white;">&copy; All Rights Reserved</p>
+      </footer>
+</body>
+</html>
